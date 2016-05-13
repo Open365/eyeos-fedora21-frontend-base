@@ -34,5 +34,3 @@ RUN gem update --no-document --system \
 
 RUN git config --global user.email "jenkins@eyeos.com" \
     && git config --global user.name "Jenkins"
-
-COPY netrc /root/.netrc
