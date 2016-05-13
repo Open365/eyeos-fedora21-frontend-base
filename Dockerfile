@@ -17,8 +17,7 @@ RUN echo "[google-chrome]" >> /etc/yum.repos.d/google-chrome.repo && \
         xorg-x11-server-Xvfb libpng-devel libpng ruby-devel qtwebkit lsof php php-cli -y \
     && yum clean all
 
-RUN npm config set registry "http://artifacts.eyeosbcn.com/nexus/content/groups/npm/" && \
-    npm install -g nan && \
+RUN npm install -g nan && \
     sed -i -e 's/v8::String::REPLACE_INVALID_UTF8/0/g' /lib/node_modules/nan/nan.h && \
     head -n 321 /lib/node_modules/nan/nan.h | tail -n 13 && \
     npm -g install node-gyp && \
